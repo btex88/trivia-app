@@ -33,3 +33,5 @@ Project developed in React with Redux and TailwindCSS.
 - After this process is done, just need to run **```npm start```** and your ready to go.
 
 ## Vercel deployment
+
+[Trivia App](https://trivia-app-gilt.vercel.app/)
