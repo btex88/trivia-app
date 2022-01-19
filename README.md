@@ -7,7 +7,7 @@ Project developed in React with Redux and TailwindCSS.
 ### Main concepts used in this project were:
 - Divide every function, functionality or element into components to better arrange and segment the code.
 - Don't be afraid to use multiple reducers and transform local states into global ones.
-- Use of CSS frameworks to help the development and improve the appealingness, in this cas I've used TailwindCSS.
+- Use of CSS frameworks to help the development and improve the appealingness, in this case I've used TailwindCSS.
 - Develop your logic into a ```src/service``` folder.
 - Name all folders and files in __```kebab-case```__, JSX classes in __```PascalCase```__ and JS functions in __```cammelCase```__.
 
