@@ -9,7 +9,6 @@ class HeaderAvatar extends React.Component {
     return (
       <div className="w-1/3 h-full flex flex-col items-center justify-evenly">
         <img
-          data-testid="header-profile-picture"
           className="rounded-full w-12 h-12"
           src={ `https://www.gravatar.com/avatar/${encryptEmail(
             player.gravatarEmail,

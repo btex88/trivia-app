@@ -29,7 +29,7 @@ class Ranking extends React.Component {
         <COMP.RankingTitle />
         <div className="h-full w-full flex flex-col items-center justify-evenly">
           { this.renderRankingCards() }
-          <COMP.HomeButton label="Home" testId="btn-go-home" />
+          <COMP.HomeButton label="Home" />
         </div>
       </div>
     );

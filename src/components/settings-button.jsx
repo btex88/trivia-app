@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import * as ACT from '../actions';
+import history from '../services/history';
 
 class SettingsButton extends React.Component {
   constructor(props) {
@@ -18,7 +19,6 @@ class SettingsButton extends React.Component {
   }
 
   handleClick() {
-    const { history } = this.props;
     this.handleAPI();
     history.push('/settings');
   }
@@ -27,7 +27,6 @@ class SettingsButton extends React.Component {
     return (
       <button
         type="button"
-        data-testid="btn-settings"
         onClick={ () => this.handleClick() }
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold w-28 h-12 rounded"
       >
@@ -44,7 +43,6 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 SettingsButton.propTypes = {
-  history: PropTypes.oneOfType(PropTypes.string).isRequired,
   fetchCategories: PropTypes.func.isRequired,
 };
 

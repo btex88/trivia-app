@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 
 class LoginInput extends React.Component {
   render() {
-    const { handleChange, id, type, value, placeholder, testId } = this.props;
+    const { handleChange, id, type, value, placeholder } = this.props;
     return (
       <div>
         <input
-          data-testid={ testId }
           id={ id }
           type={ type }
           placeholder={ placeholder }
@@ -27,7 +26,6 @@ LoginInput.propTypes = {
   type: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
-  testId: PropTypes.string.isRequired,
 };
 
 export default LoginInput;

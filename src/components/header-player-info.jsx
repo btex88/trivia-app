@@ -11,11 +11,11 @@ class HeaderPlayerInfo extends React.Component {
       >
         <div className="w-full h-full flex flex-nowrap items-center justify-center">
           <span className="mr-0.5">Player:</span>
-          <span data-testid="header-player-name">{ name }</span>
+          <span>{ name }</span>
         </div>
         <div className="w-full h-full flex flex-nowrap items-center justify-center">
           <span className="mr-0.5">Score:</span>
-          <span data-testid="header-score">{score}</span>
+          <span>{score}</span>
         </div>
       </div>
     );

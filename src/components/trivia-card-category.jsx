@@ -9,7 +9,6 @@ class TriviaCardCategory extends React.Component {
       <div className="w-full flex flex-col items-center justify-evenly pt-8 pb-4">
         <span
           className="capitalize text-semibold"
-          data-testid="question-category"
           dangerouslySetInnerHTML={ { __html: results[indexCount].category } }
         />
       </div>

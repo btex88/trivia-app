@@ -11,7 +11,7 @@ class Feedback extends React.Component {
         <div className="w-full h-full flex flex-col items-center justify-evenly">
           <COMP.FeedbackMessage />
           <COMP.RankingButton />
-          <COMP.HomeButton label="Play Again" testId="btn-play-again" />
+          <COMP.HomeButton label="Play Again" />
         </div>
       </div>
     );

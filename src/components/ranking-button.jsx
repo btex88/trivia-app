@@ -44,7 +44,6 @@ class RankingButton extends React.Component {
       <Link to="/ranking">
         <button
           type="button"
-          data-testid="btn-ranking"
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold w-28 h-12 rounded"
           onClick={ () => this.handleLocalStorage() }
         >

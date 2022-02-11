@@ -6,14 +6,11 @@ class TriviaCardQuestion extends React.Component {
   render() {
     const { questions: { results }, indexCount } = this.props;
     return (
-      <div className="w-full h-16 flex flex-col items-center justify-evenly px-8">
+      <div className="w-full h-16 flex flex-col items-center justify-evenly p-8">
         <span
           className="text-md font-semibold"
-          data-testid="question-text"
-          // dangerouslySetInnerHTML={ { __html: results[indexCount].question } }
-        >
-          {results[indexCount].question}
-        </span>
+          dangerouslySetInnerHTML={ { __html: results[indexCount].question } }
+        />
       </div>
     );
   }

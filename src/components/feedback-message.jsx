@@ -14,7 +14,6 @@ class FeedbackMessage extends React.Component {
     if (Number(assertions) >= THREE) {
       return (
         <span
-          data-testid="feedback-text"
           className="text-3xl antialiased tracking-wide text-gray-500 select-none"
         >
           Well Done!
@@ -23,7 +22,6 @@ class FeedbackMessage extends React.Component {
     }
     return (
       <span
-        data-testid="feedback-text"
         className="text-3xl antialiased tracking-wide text-gray-500 select-none"
       >
         Could be better...
@@ -42,17 +40,11 @@ class FeedbackMessage extends React.Component {
         </div>
         <div className="w-full h-28 flex flex-col items-center justify-evenly">
           <span className="font-semibold text-lg">Your total score was:</span>
-          <span
-            data-testid="feedback-total-score"
-            className="text-xl font-bold"
-          >
+          <span className="text-xl font-bold">
             {score}
           </span>
           <span className="font-semibold text-lg">Right answers:</span>
-          <span
-            data-testid="feedback-total-question"
-            className="text-xl font-bold"
-          >
+          <span className="text-xl font-bold">
             {Number(assertions)}
           </span>
         </div>

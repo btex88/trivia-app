@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 
 class LoginButton extends React.Component {
   render() {
-    const { label, testId, handleClick, isDisabled } = this.props;
+    const { label, handleClick, isDisabled } = this.props;
     return (
       <button
-        data-testid={ testId }
         type="button"
         onClick={ () => handleClick() }
         disabled={ isDisabled }
@@ -23,7 +22,6 @@ class LoginButton extends React.Component {
 
 LoginButton.propTypes = {
   label: PropTypes.string.isRequired,
-  testId: PropTypes.string.isRequired,
   handleClick: PropTypes.func.isRequired,
   isDisabled: PropTypes.bool.isRequired,
 };

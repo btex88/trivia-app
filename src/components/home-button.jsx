@@ -5,12 +5,11 @@ import { Link } from 'react-router-dom';
 
 class HomeButton extends React.Component {
   render() {
-    const { label, testId } = this.props;
+    const { label } = this.props;
     return (
       <Link to="/">
         <button
           type="button"
-          data-testid={ testId }
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold w-28 h-12 rounded"
         >
           {label}
@@ -22,7 +21,6 @@ class HomeButton extends React.Component {
 
 HomeButton.propTypes = {
   label: PropTypes.string.isRequired,
-  testId: PropTypes.string.isRequired,
 };
 
 export default HomeButton;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as ACT from '../actions';
 
-class Timer extends React.Component {
+class Timer extends React.PureComponent {
   constructor(props) {
     super(props);
 
@@ -12,7 +12,9 @@ class Timer extends React.Component {
 
   componentDidMount() {
     const ONE = 1000;
-    this.interval = setInterval(() => this.handleTimer(), ONE);
+    this.interval = setInterval(() => {
+      this.handleTimer();
+    }, ONE);
   }
 
   componentWillUnmount() {

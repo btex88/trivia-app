@@ -56,7 +56,6 @@ class TriviaCardAnswer extends React.Component {
   render() {
     const {
       isCorrect,
-      testId,
       clickStatus,
       answer,
     } = this.props;
@@ -66,19 +65,16 @@ class TriviaCardAnswer extends React.Component {
         text-black"
       >
         <button
-          data-testid={ testId }
           type="button"
           className={ clickStatus
             ? 'bg-yellow-500 font-bold py-3 px-6 rounded'
             : 'bg-yellow-500 hover:bg-yellow-700 font-bold py-3 px-6 rounded' }
           style={ this.handleStyle(isCorrect, clickStatus) }
           disabled={ clickStatus }
-          // dangerouslySetInnerHTML={ { __html: answer } }
+          dangerouslySetInnerHTML={ { __html: answer } }
           aria-label={ answer }
           onClick={ () => this.handleClick() }
-        >
-          {answer}
-        </button>
+        />
       </div>
     );
   }
@@ -99,7 +95,6 @@ TriviaCardAnswer.propTypes = {
   indexCount: PropTypes.number.isRequired,
   isCorrect: PropTypes.bool.isRequired,
   questions: PropTypes.objectOf([PropTypes.array, PropTypes.string]).isRequired,
-  testId: PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TriviaCardAnswer);

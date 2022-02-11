@@ -6,6 +6,7 @@ import validateEmail from '../services/validate-email';
 import local from '../services/handle-local';
 import * as ACT from '../actions';
 import answerShuffler from '../services/answer-shuffler';
+import history from '../services/history';
 
 class Login extends React.Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class Login extends React.Component {
   }
 
   handleClick() {
-    const { history, fetchToken, addPlayer, fetchQuestions, addShuffled } = this.props;
+    const { fetchToken, addPlayer, fetchQuestions, addShuffled } = this.props;
     const { name, email } = this.state;
     const THREE = 3;
     fetchToken()
@@ -71,7 +72,6 @@ class Login extends React.Component {
   }
 
   render() {
-    const { history } = this.props;
     const { email, name, isDisabled } = this.state;
     return (
       <div className="w-full h-full flex flex-col items-center justify-evenly">
@@ -81,7 +81,6 @@ class Login extends React.Component {
             placeholder="Digite seu nome"
             type="text"
             id="name"
-            testId="input-player-name"
             value={ name }
             handleChange={ this.handleChange }
           />
@@ -89,7 +88,6 @@ class Login extends React.Component {
             placeholder="exemplo@email.com"
             type="email"
             id="email"
-            testId="input-gravatar-email"
             value={ email }
             handleChange={ this.handleChange }
           />
@@ -97,11 +95,10 @@ class Login extends React.Component {
         <div className="w-full h-28 flex flex-col items-center justify-between">
           <COMP.LoginButton
             label="Play"
-            testId="btn-play"
             handleClick={ this.handleClick }
             isDisabled={ isDisabled }
           />
-          <COMP.SettingsButton history={ history } />
+          <COMP.SettingsButton />
         </div>
       </div>
     );
@@ -117,7 +114,6 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 Login.propTypes = {
-  history: PropTypes.oneOfType(PropTypes.string).isRequired,
   fetchToken: PropTypes.func.isRequired,
   addPlayer: PropTypes.func.isRequired,
   fetchQuestions: PropTypes.func.isRequired,

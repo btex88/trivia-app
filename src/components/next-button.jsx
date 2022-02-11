@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as ACT from '../actions';
+import history from '../services/history';
 
 class NextButton extends React.Component {
   constructor(props) {
@@ -15,7 +16,6 @@ class NextButton extends React.Component {
       indexIncrement,
       clickReset,
       timerReset,
-      history,
       indexCount,
       questionsReset,
       shuffledReset,
@@ -37,7 +37,6 @@ class NextButton extends React.Component {
   render() {
     return (
       <button
-        data-testid="btn-next"
         type="button"
         className="w-full bg-blue-500 font-bold border-t-2 h-full text-white
         hover:bg-blue-400 border-blue-900"
@@ -64,7 +63,6 @@ NextButton.propTypes = {
   indexIncrement: PropTypes.func.isRequired,
   clickReset: PropTypes.func.isRequired,
   timerReset: PropTypes.func.isRequired,
-  history: PropTypes.oneOfType(PropTypes.string).isRequired,
   indexCount: PropTypes.number.isRequired,
   questionsReset: PropTypes.func.isRequired,
   shuffledReset: PropTypes.func.isRequired,

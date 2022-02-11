@@ -21,7 +21,6 @@ class Settings extends React.Component {
   handleClick(e) {
     const { addFilter, categories } = this.props;
     const { id, value } = e.target;
-    console.log(id);
     this.setState({ [id]: value }, () => {
       if (id === 'diff') addFilter({ [id]: _.toLower(value) });
       if (id === 'type') {
@@ -39,10 +38,7 @@ class Settings extends React.Component {
     return (
       <div className="w-full h-full flex flex-col items-center">
         <div className="w-full h-24 flex flex-col items-center justify-center">
-          <span
-            data-testid="settings-title"
-            className="text-4xl text-gray-500"
-          >
+          <span className="text-4xl text-gray-500">
             Settings
           </span>
         </div>

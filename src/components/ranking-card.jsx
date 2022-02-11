@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class RankingCard extends React.Component {
   render() {
-    const { name, picture, score, index } = this.props;
+    const { name, picture, score } = this.props;
     return (
       <div
         className="w-72 h-28 border shadow-2xl flex flex-nowrap items-center
@@ -15,7 +15,6 @@ class RankingCard extends React.Component {
             <span className="mr-0.5">Player:</span>
             <span
               className="font-bold"
-              data-testid={ `player-name-${index}` }
             >
               {name}
             </span>
@@ -24,7 +23,6 @@ class RankingCard extends React.Component {
             <span className="mr-0.5">Score:</span>
             <span
               className="font-bold"
-              data-testid={ `player-score-${index}` }
             >
               {score}
             </span>
@@ -39,7 +37,6 @@ RankingCard.propTypes = {
   name: PropTypes.string.isRequired,
   picture: PropTypes.string.isRequired,
   score: PropTypes.number.isRequired,
-  index: PropTypes.number.isRequired,
 };
 
 export default RankingCard;
