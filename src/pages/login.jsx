@@ -6,7 +6,6 @@ import validateEmail from '../services/validate-email';
 import local from '../services/handle-local';
 import * as ACT from '../actions';
 import answerShuffler from '../services/answer-shuffler';
-import history from '../services/history';
 
 class Login extends React.Component {
   constructor(props) {
@@ -40,7 +39,7 @@ class Login extends React.Component {
   }
 
   handleClick() {
-    const { fetchToken, addPlayer, fetchQuestions, addShuffled } = this.props;
+    const { history, fetchToken, addPlayer, fetchQuestions, addShuffled } = this.props;
     const { name, email } = this.state;
     const THREE = 3;
     fetchToken()
@@ -73,6 +72,7 @@ class Login extends React.Component {
 
   render() {
     const { email, name, isDisabled } = this.state;
+    const { history } = this.props;
     return (
       <div className="w-full h-full flex flex-col items-center justify-evenly">
         <COMP.LoginTitle />
@@ -98,7 +98,7 @@ class Login extends React.Component {
             handleClick={ this.handleClick }
             isDisabled={ isDisabled }
           />
-          <COMP.SettingsButton />
+          <COMP.SettingsButton history={ history } />
         </div>
       </div>
     );
@@ -114,11 +114,13 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 Login.propTypes = {
+  history: PropTypes.oneOfType(PropTypes.string).isRequired,
   fetchToken: PropTypes.func.isRequired,
   addPlayer: PropTypes.func.isRequired,
   fetchQuestions: PropTypes.func.isRequired,
   addShuffled: PropTypes.func.isRequired,
   resetScore: PropTypes.func.isRequired,
 };
+
 
 export default connect(null, mapDispatchToProps)(Login);

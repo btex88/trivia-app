@@ -55,6 +55,7 @@ Title.propTypes = {
   history: PropTypes.oneOfType(PropTypes.string).isRequired,
   questions: PropTypes.objectOf([PropTypes.array, PropTypes.string]).isRequired,
   clickReset: PropTypes.func.isRequired,
+  history: PropTypes.oneOfType(PropTypes.string).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Title);

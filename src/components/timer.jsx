@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as ACT from '../actions';
 
-class Timer extends React.PureComponent {
+class Timer extends React.Component {
   constructor(props) {
     super(props);
 

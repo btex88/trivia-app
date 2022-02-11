@@ -57,7 +57,12 @@ class RankingButton extends React.Component {
 const mapStateToProps = (state) => state;
 
 RankingButton.propTypes = {
-  player: PropTypes.objectOf([PropTypes.string, PropTypes.number]).isRequired,
+  player: PropTypes.shape({
+    name: PropTypes.string,
+    assertion: PropTypes.number,
+    score: PropTypes.number,
+    gravatarEmail: PropTypes.string,
+  }).isRequired,
 };
 
 export default connect(mapStateToProps)(RankingButton);

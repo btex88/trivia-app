@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as ACT from '../actions';
-import history from '../services/history';
 
 class NextButton extends React.Component {
   constructor(props) {
@@ -20,6 +19,7 @@ class NextButton extends React.Component {
       questionsReset,
       shuffledReset,
       indexReset,
+      history,
     } = this.props;
     const FOUR = 4;
     clickReset();
@@ -61,6 +61,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 NextButton.propTypes = {
   indexIncrement: PropTypes.func.isRequired,
+  history: PropTypes.oneOfType(PropTypes.string).isRequired,
   clickReset: PropTypes.func.isRequired,
   timerReset: PropTypes.func.isRequired,
   indexCount: PropTypes.number.isRequired,

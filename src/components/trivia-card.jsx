@@ -26,7 +26,7 @@ class TriviaCard extends React.Component {
   }
 
   render() {
-    const { shuffledAnswers, clickStatus, indexCount } = this.props;
+    const { shuffledAnswers, clickStatus, indexCount, history } = this.props;
     const FIVE = 5;
     return (
       <div className="w-full h-full flex flex-col items-center justify-evenly">
@@ -40,7 +40,7 @@ class TriviaCard extends React.Component {
               {_.isEmpty(shuffledAnswers) || this.renderAnswers()}
             </div>
             <div className="w-full h-16 flex-col items-center justify-evenly">
-              { clickStatus && <COMP.NextButton /> }
+              { clickStatus && <COMP.NextButton history={ history }/> }
             </div>
           </>)}
       </div>
@@ -55,6 +55,7 @@ TriviaCard.propTypes = {
   shuffledAnswers: PropTypes.arrayOf(PropTypes.object).isRequired,
   indexCount: PropTypes.number.isRequired,
   clickStatus: PropTypes.bool.isRequired,
+  history: PropTypes.oneOfType(PropTypes.string).isRequired,
 };
 
 export default connect(mapStateToProps)(TriviaCard);
