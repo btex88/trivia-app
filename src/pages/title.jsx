@@ -30,7 +30,6 @@ class Title extends React.Component {
     return (
       <div className="w-full h-full flex flex-col items-center relative">
         <COMP.TriviaCard history={ history } />
-        <COMP.Timer />
       </div>);
   }
 

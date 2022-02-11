@@ -44,6 +44,6 @@ export {
   HomeButton,
   RankingCard,
   RankingTitle,
- Dropdown,
+  Dropdown,
   DropdownItem,
 };

@@ -22,12 +22,9 @@ class Timer extends React.Component {
   }
 
   handleTimer() {
-    const { clickStatus, clickButton, countdown, timer: { sec } } = this.props;
+    const { clickStatus, countdown, timer: { sec } } = this.props;
     if (Number(sec) !== 0 && !clickStatus) {
       countdown(sec);
-    } else {
-      clearInterval(this.interval);
-      if (!clickStatus) clickButton();
     }
   }
 

@@ -30,6 +30,7 @@ class TriviaCard extends React.Component {
     const FIVE = 5;
     return (
       <div className="w-full h-full flex flex-col items-center justify-evenly">
+        <COMP.Timer />
         { indexCount < FIVE && (
           <>
             <div className="w-full h-36 flex flex-col items-center justify-evenly">
